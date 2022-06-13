@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>RFC-0001: An overview of the Tari network - The Tari Network: RFC library</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The Tari network RFC library and documentation">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+          });
+        </script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = 'light';
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <img src="theme/images/tari-splash.png" class="tlu">
+
+            <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About the Tari RFC documents</a></li><li class="chapter-item expanded "><a href="RFC-0001_overview.html" class="active"><strong aria-hidden="true">1.</strong> RFC-0001: An overview of the Tari network</a></li><li class="chapter-item expanded "><a href="RFC-0100_BaseLayer.html"><strong aria-hidden="true">2.</strong> RFC-0100: The Tari Base Layer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="RFC-0110_BaseNodes.html"><strong aria-hidden="true">2.1.</strong> RFC-0110: Base nodes</a></li><li class="chapter-item expanded "><a href="RFC-0111_BaseNodeArchitecture.html"><strong aria-hidden="true">2.2.</strong> RFC-0111: Base node architecture</a></li><li class="chapter-item expanded "><a href="RFC-0120_Consensus.html"><strong aria-hidden="true">2.3.</strong> RFC-0120: Consensus rules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="RFC-0121_ConsensusEncoding.html"><strong aria-hidden="true">2.3.1.</strong> RFC-0121: Consensus encoding</a></li></ol></li><li class="chapter-item expanded "><a href="RFC-0131_Mining.html"><strong aria-hidden="true">2.4.</strong> RFC-0131: Mining</a></li><li class="chapter-item expanded "><a href="RFC-0132_Merge_Mining_Monero.html"><strong aria-hidden="true">2.5.</strong> RFC-0132: Merge Mining Monero</a></li><li class="chapter-item expanded "><a href="RFC-0140_Syncing_and_seeding.html"><strong aria-hidden="true">2.6.</strong> RFC-0140: Sync and Seeding</a></li><li class="chapter-item expanded "><a href="RFC-0150_Wallets.html"><strong aria-hidden="true">2.7.</strong> RFC-0150: Wallets</a></li><li class="chapter-item expanded "><a href="RFC-0152_EmojiId.html"><strong aria-hidden="true">2.8.</strong> RFC-0152: Emoji ID</a></li><li class="chapter-item expanded "><a href="RFC-0153_StagedWalletSecurity.html"><strong aria-hidden="true">2.9.</strong> RFC-0153: Staged Wallet Security</a></li><li class="chapter-item expanded "><a href="RFC-0154_DeepLinksConvencion.html"><strong aria-hidden="true">2.10.</strong> RFC-0154: Deep links structure convention</a></li><li class="chapter-item expanded "><a href="RFC-0160_BlockSerialization.html"><strong aria-hidden="true">2.11.</strong> RFC-0160: Block Binary Serialization</a></li><li class="chapter-item expanded "><a href="RFC-0170_NetworkCommunicationProtocol.html"><strong aria-hidden="true">2.12.</strong> RFC-0170: Network Communication Protocol</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="RFC-0171_MessageSerialisation.html"><strong aria-hidden="true">2.12.1.</strong> RFC-0171: Message Serialisation</a></li><li class="chapter-item expanded "><a href="RFC-0172_PeerToPeerMessagingProtocol.html"><strong aria-hidden="true">2.12.2.</strong> RFC-0172: Peer to Peer Messaging Protocol</a></li><li class="chapter-item expanded "><a href="RFC-0173_Versioning.html"><strong aria-hidden="true">2.12.3.</strong> RFC-0173: Versioning</a></li></ol></li><li class="chapter-item expanded "><a href="RFC-0180_BulletproofRewinding.html"><strong aria-hidden="true">2.13.</strong> RFC-0180: Bulletproof range proof rewinding</a></li><li class="chapter-item expanded "><a href="RFC-0190_Mempool.html"><strong aria-hidden="true">2.14.</strong> RFC-0190: Mempool</a></li><li class="chapter-item expanded "><a href="BaseLayerExtensions.html"><strong aria-hidden="true">2.15.</strong> Tari-specific extensions to Mimblewimble</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="RFC-0201_TariScript.html"><strong aria-hidden="true">2.15.1.</strong> RFC-0201: TariScript</a></li><li class="chapter-item expanded "><a href="RFC-0202_TariScriptOpcodes.html"><strong aria-hidden="true">2.15.2.</strong> RFC-0202: TariScript Opcodes</a></li><li class="chapter-item expanded "><a href="RFC-0203_StealthAddresses.html"><strong aria-hidden="true">2.15.3.</strong> RFC-0203: Stealth Addresses</a></li><li class="chapter-item expanded "><a href="RFC-0230_HTLC.html"><strong aria-hidden="true">2.15.4.</strong> RFC-0230: Hash time locked contracts</a></li><li class="chapter-item expanded "><a href="RFC-0240_AtomicSwap.html"><strong aria-hidden="true">2.15.5.</strong> RFC-0240: Atomic swap</a></li><li class="chapter-item expanded "><a href="RFC-0241_AtomicSwapXMR.html"><strong aria-hidden="true">2.15.6.</strong> RFC-0241: XMR Atomic swap</a></li><li class="chapter-item expanded "><a href="RFC-0250_Covenants.html"><strong aria-hidden="true">2.15.7.</strong> RFC-0250: Covenants</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="RFC-0312_DANHighLevelSpecification.html"><strong aria-hidden="true">3.</strong> RFC-0312: High level Digital Asset Network Specification</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="AssetManagement.html"><strong aria-hidden="true">3.1.</strong> Asset Management</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="RFC-0311_AssetTemplates.html"><strong aria-hidden="true">3.1.1.</strong> RFC-0311: Digital Asset templates</a></li></ol></li><li class="chapter-item expanded "><a href="RFC-0301_NamespaceRegistration.html"><strong aria-hidden="true">3.2.</strong> RFC-0301: Namespace Registration</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> Validator Nodes</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="RFC-0322_VNRegistration.html"><strong aria-hidden="true">3.3.1.</strong> RFC-0322: Validator Node Registration</a></li><li class="chapter-item expanded "><a href="RFC-0340_VNConsensusOverview.html"><strong aria-hidden="true">3.3.2.</strong> RFC-0340: Validator Node Consensus</a></li></ol></li><li class="chapter-item expanded "><a href="RFC-0360_NFTInvoices.html"><strong aria-hidden="true">3.4.</strong> RFC-0360: NFT sale using MimbleWimble Invoice</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Proposals</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="RFC-8001_MultiPartyTransactions.html"><strong aria-hidden="true">4.1.</strong> RFC-8001: Multi-party transactions</a></li><li class="chapter-item expanded "><a href="RFC-8002_TransactionProtocol.html"><strong aria-hidden="true">4.2.</strong> RFC-8002: Transaction protocol</a></li><li class="chapter-item expanded "><a href="RFC-8003_TariUseCases.html"><strong aria-hidden="true">4.3.</strong> RFC-8003: Tari Use Cases</a></li></ol></li><li class="chapter-item expanded "><a href="deprecated.html"><strong aria-hidden="true">5.</strong> Deprecated RFCs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="RFCD-0010_CodeStructure.html"><strong aria-hidden="true">5.1.</strong> RFC-0010: Tari code structure and organization</a></li><li class="chapter-item expanded "><a href="RFCD-0130_Mining.html"><strong aria-hidden="true">5.2.</strong> RFC-0130: Mining</a></li><li class="chapter-item expanded "><a href="RFCD-0300_DAN.html"><strong aria-hidden="true">5.3.</strong> RFC-0300: The Digital Assets Network</a></li><li class="chapter-item expanded "><a href="RFCD-0302_ValidatorNodes.html"><strong aria-hidden="true">5.4.</strong> RFC-0302: Validator Nodes</a></li><li class="chapter-item expanded "><a href="RFCD-0304_VNCommittees.html"><strong aria-hidden="true">5.5.</strong> RFC-0304: Validator Node committee selection</a></li><li class="chapter-item expanded "><a href="RFCD-0341_AssetRegistration.html"><strong aria-hidden="true">5.6.</strong> RFC-0341: Asset registration</a></li><li class="chapter-item expanded "><a href="RFCD-0345_AssetLifeCycle.html"><strong aria-hidden="true">5.7.</strong> RFC-0345: Asset Life cycle</a></li><li class="chapter-item expanded "><a href="RFCD-0500_PaymentChannels.html"><strong aria-hidden="true">5.8.</strong> RFC-0500: Tari payment channels</a></li></ol></li><li class="chapter-item expanded "><a href="RFC_template.html"><strong aria-hidden="true">6.</strong> RFC template</a></li><li class="chapter-item expanded "><a href="Glossary.html"><strong aria-hidden="true">7.</strong> Glossary</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title"><img src="theme/images/tari-horizontal-logo.png"/> </h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="rfc-0001overview"><a class="header" href="#rfc-0001overview">RFC-0001/Overview</a></h1>
+<h2 id="overview-of-tari-network"><a class="header" href="#overview-of-tari-network">Overview of Tari Network</a></h2>
+<p><img src="theme/images/status-draft.svg" alt="status: draft" /></p>
+<p><strong>Maintainer(s)</strong>: <a href="https://github.com/CjS77">Cayle Sharrock</a></p>
+<h1 id="licence"><a class="header" href="#licence">Licence</a></h1>
+<p><a href="https://opensource.org/licenses/BSD-3-Clause"> The 3-Clause BSD Licence</a>.</p>
+<p>Copyright 2018 The Tari Development Community</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
+following conditions are met:</p>
+<ol>
+<li>Redistributions of this document must retain the above copyright notice, this list of conditions and the following
+disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following
+disclaimer in the documentation and/or other materials provided with the distribution.</li>
+<li>Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products
+derived from this software without specific prior written permission.</li>
+</ol>
+<p>THIS DOCUMENT IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;, AND ANY EXPRESS OR IMPLIED WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<h2 id="language"><a class="header" href="#language">Language</a></h2>
+<p>The keywords &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;,
+&quot;NOT RECOMMENDED&quot;, &quot;MAY&quot; and &quot;OPTIONAL&quot; in this document are to be interpreted as described in
+<a href="https://tools.ietf.org/html/bcp14">BCP 14</a> (covering RFC2119 and RFC8174) when, and only when, they appear in all capitals, as
+shown here.</p>
+<h2 id="disclaimer"><a class="header" href="#disclaimer">Disclaimer</a></h2>
+<p>This document and its content are intended for information purposes only and may be subject to change or update
+without notice.</p>
+<p>This document may include preliminary concepts that may or may not be in the process of being developed by the Tari
+community. The release of this document is intended solely for review and discussion by the community of the
+technological merits of the potential system outlined herein.</p>
+<h2 id="goals"><a class="header" href="#goals">Goals</a></h2>
+<p>The aim of this proposal is to provide a very high-level perspective of the moving parts of the Tari protocol.</p>
+<h2 id="related-requests-for-comment"><a class="header" href="#related-requests-for-comment">Related Requests for Comment</a></h2>
+<ul>
+<li><a href="RFC-0100_BaseLayer.html">RFC-0100: Base layer</a></li>
+<li><a href="RFCD-0300_DAN.html">RFC-0300: Digital asset network</a></li>
+<li><a href="RFC-0311_AssetTemplates.html">RFC-0310: Digital assets</a></li>
+</ul>
+<h2 id="description"><a class="header" href="#description">Description</a></h2>
+<h3 id="abstract"><a class="header" href="#abstract">Abstract</a></h3>
+<p>The Tari network comprises two layers:</p>
+<ol>
+<li>A base layer that deals with <a href="Glossary.html#tari-coin">Tari coin</a> <a href="Glossary.html#transaction">transaction</a>s. It governed by a proof-of-work (PoW) blockchain that is merged-mined with
+Monero. The base layer is highly secure, decentralized and relatively slow.</li>
+<li>A digital assets network (DAN), consisting of multiple independent side-chains, that manage the state of the native digital assets.
+Usually, these side-chains favour liveness and scalability at the expense of decentralisation, but this need not be the
+case.</li>
+</ol>
+<h3 id="currency-tokens-and-digital-assets"><a class="header" href="#currency-tokens-and-digital-assets">Currency Tokens and Digital Assets</a></h3>
+<p>There are two major digital entities on the Tari network: the coins that are the unit of transfer for the Tari
+cryptocurrency, and the digital assets that could represent anything from tickets to in-game items.</p>
+<p>Tari coins are the fuel that drives the entire Tari ecosystem. They share many of the properties of money, so
+security is a non-negotiable requirement. In a cryptocurrency context, this is usually achieved by employing a
+decentralized network running a censorship-resistant protocol such as Nakamoto consensus over a proof-of-work blockchain.
+As we know, PoW blockchains are not scalable or very fast.</p>
+<p>On the other hand, the Tari network will be used to create and manage digital assets.</p>
+<p>In Tari parlance, a digital asset is defined as a finite set of digital stateful tokens that are governed by predefined
+rules. A single digital asset may define anything from one to thousands of tokens within its scope.</p>
+<p>For example, in a ticketing context, an <em>event</em> might be an asset. The asset definition will allocate tokens representing
+the tickets for that event. The ticket tokens will have state, such as its current owner and whether or not it has been
+redeemed. Users might be interacting with digital assets hundreds of times a second, and state updates need to be
+propagated and agreed upon by the network very quickly. A blockchain-enabled ticketing system is practically useless if
+a user has to wait for &quot;three block confirmations&quot; before the bouncer will let her into a venue. Users expect near-instant
+state updates because centralized solutions offer them that today.</p>
+<p>Therefore the Tari DAN must offer speed and scalability.</p>
+<h4 id="multiple-layers"><a class="header" href="#multiple-layers">Multiple Layers</a></h4>
+<p>The <a href="https://en.wikipedia.org/wiki/CAP_theorem">distributed system trilemma</a> tells us that these requirements are
+mutually exclusive.</p>
+<p>We can't have fast, cheap digital assets and also highly secure and decentralized currency tokens on a single system.</p>
+<p>Tari overcomes this constraint by building two layers:</p>
+<ol>
+<li>A base layer that provides a public ledger of Tari coin transactions, secured by PoW to maximize security.</li>
+<li>A DAN consisting of multiple independent side-chains that each manage the state of a digital asset. They are typically
+very fast and cheap, at the expense of decentralization.</li>
+</ol>
+<p>If required, the digital assets layer can refer back to the base layer to temporarily give up speed in exchange for
+increased security. These commitments allow token owners to make attestations based on their asset state without relying completely on
+the side-chain infrastructure.</p>
+<p><img src="theme/images/chains.png" alt="Tari two-layer architecture" /></p>
+<h3 id="base-layer"><a class="header" href="#base-layer">Base Layer</a></h3>
+<p><em>Refer to <a href="RFC-0100_BaseLayer.html">RFC-0100/BaseLayer</a> for more detail</em>.</p>
+<p>The Tari base layer has the following primary features:</p>
+<ul>
+<li>PoW-based blockchain using Nakamoto consensus</li>
+<li>Transactions and blocks based on the <a href="Glossary.html#mimblewimble">Mimblewimble</a> protocol</li>
+</ul>
+<p><a href="Glossary.html#mimblewimble">Mimblewimble</a> is an exciting new blockchain protocol that offers some key advantages over other <a href="Glossary.html#unspent-transaction-outputs">UTXO</a>-based
+cryptocurrencies such as Bitcoin:</p>
+<ul>
+<li>Transactions are private. This means that casual observers cannot ascertain the amounts being transferred or the
+identities of the parties involved.</li>
+<li>Mimblewimble has a different set of security guarantees to Bitcoin. The upshot of this is that you can throw away UTXOs
+away once they are spent and still verify the integrity of the ledger.</li>
+<li>Multi-signature transactions can be easily aggregated, making such transactions very compact, and completely hiding
+the parties involved, or the fact that there were multiple parties involved at all.</li>
+</ul>
+<blockquote>
+<p>&quot;Mimblewimble is the most sound, scalable 'base layer' protocol we know&quot; -- @fluffypony</p>
+</blockquote>
+<h4 id="proof-of-work"><a class="header" href="#proof-of-work">Proof of Work</a></h4>
+<p>There are a few options for the PoW mechanism for Tari:</p>
+<ul>
+<li>Implement an existing PoW mechanism. This is a bad idea, because a nascent cryptocurrency that uses a non-unique
+mining algorithm is incredibly vulnerable to a 51% attack from miners from other currencies using the same algorithm.
+Bitcoin Gold and Verge have already experienced this, and it's a <a href="https://www.crypto51.app/">matter of time</a> before it
+happens to others.</li>
+<li>Implement a unique PoW algorithm. This is a risky approach and comes close to breaking the number one rule of
+cryptocurrency design: never roll your own crypto.</li>
+<li><a href="https://tari-labs.github.io/tari-university/merged-mining/merged-mining-scene/MergedMiningIntroduction.html">Merged mining</a>.
+This approach is not without its own risks, but offers the best trade-offs in terms of bootstrapping the network. It
+typically provides high levels of hash rate from day one, along with 51% attack resistance, assuming mining pools are
+well-distributed.</li>
+<li>A hybrid approach, utilizing two or more of the above mechanisms.</li>
+</ul>
+<p>Ultimately, the community decided to employ a hybrid mining approach. On average, 60% of block rewards come from Monero merge-mining,
+while 40% come from standalone SHA-3-based mining algorithm.  More information on Tari's current approach can be found in <a href="RFC-0131_Mining.html">RFC-0131_Mining</a>.</p>
+<h3 id="digital-assets-network"><a class="header" href="#digital-assets-network">Digital Assets Network</a></h3>
+<p>A more detailed proposal for the DAN is presented in <a href="RFCD-0300_DAN.html">RFC-0300/DAN</a>. Digital assets
+<em>are discussed in more detail in <a href="RFC-0311_AssetTemplates.html">RFC-0310/Assets</a>.</em></p>
+<p>The DAN is focused on achieving high speed and scalability, without compromising on security. To achieve
+this we make the explicit trade-off of sacrificing decentralization. Generally, the primary parties that have a stake in the
+security of a given digital asset are the Asset Issuer and Token owners. This fact points to a natural centralization of control
+of an asset by the Asset Issuer.</p>
+<p>Digital Assets consist of a set of tokens and their associated state. The state of an asset's tokens will be managed on a side-chain
+that will run in parallel to the Tari base layer. The consensus mechanism, ledger style and other characteristics of the side-chain
+will be chosen and managed by the Asset Issuer.</p>
+<p>There are many options for the nature of these side-chains. These are still under discussion but it will be possible to run
+multiple types of side-chains in the DAN and an Asset Issuer can choose which best suits the asset type it is supporting.</p>
+<p>Please refer to Tari Labs University (TLU) for detailed discussions on
+<a href="https://tlu.tarilabs.com/layer2scaling/layer2scaling-landscape/layer2scaling-survey.html">layer 2 scaling solutions</a>
+and
+<a href="https://tlu.tarilabs.com/consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html">consensus mechanisms</a>.</p>
+<h3 id="the-role-of-the-base-layer"><a class="header" href="#the-role-of-the-base-layer">The role of the base layer</a></h3>
+<p>The Base Layer fulfils these, and only these, major roles:</p>
+<ol>
+<li>It manages and enforces the accounting and consensus rules of the base Tari (XTR) token. This includes standard payments,
+and simple smart contracts such as cross-chain atomic swaps.</li>
+<li>It maintains the Digital Asset register. This includes functionality for side-chain management, checkpoints, and transfer
+of funds into and out of side-chains.</li>
+<li>Maintain a register of smart contract templates. This allows users to verify that digital assets are running the code that they 
+expect and includes functionality like version tracking.</li>
+</ol>
+<p>In general, the base layer knows <em>nothing about the specifics of what is happening on the side-chains</em>. It only cares
+that no Tari is created or destroyed, and that the flow of funds in and out of side chains are carried out by the appropriate
+authorised agents.</p>
+<p>This is by design: the network cannot scale if details of digital asset contracts have to be tracked on the base layer.
+We envisage that there could be hundreds of thousands of contracts deployed on Tari. Some of those contracts may be enormous;
+imagine controlling every piece of inventory and their live statistics for a massively multiplayer online role-playing
+game (MMORPG). The base layer is also too slow. If <em>any</em> state relies on base layer transactions being confirmed, there
+is an immediate lag before that state change can be considered final, which kills the liveness properties we seek for the DAN.</p>
+<p>It is better to keep the two networks almost totally decoupled from the outset, and allow each network to play to its
+strength.</p>
+<p>That said, there are key interactions between the two layers. The base layer is a ledger and can be used as a
+source of truth for the DAN. Asset side-chains will periodically commit to (a summary of) their state on the base layer.
+These commitments make it possible for token owners to make attestations about their tokens at certain points in time
+without relying on the side-chain. These commitments can also be used as a final court of appeal in the case of consensus disputes.
+The checkpoints also serve as a mechanism to check that Validator Nodes are still alive and well.</p>
+<p>The interplay between the base layer and the DAN is what incentivises every actor in the system to maintain an efficient and
+well-functioning network, even while acting in their own self-interest.</p>
+<h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<p>The following table summarizes the defining characteristics of the Tari network layers:</p>
+<table><thead><tr><th align="left"></th><th align="left">Base Layer</th><th align="left">Digital Assets Network</th></tr></thead><tbody>
+<tr><td align="left">Speed</td><td align="left">Slow</td><td align="left">Fast</td></tr>
+<tr><td align="left">Scalability</td><td align="left">Moderate</td><td align="left">Very high</td></tr>
+<tr><td align="left">Security</td><td align="left">High</td><td align="left">Moderate</td></tr>
+<tr><td align="left">Decentralization</td><td align="left">High</td><td align="left">Low - Med</td></tr>
+<tr><td align="left">Processes digital asset instructions</td><td align="left">Side-chains and checkpoints</td><td align="left">Yes</td></tr>
+</tbody></table>
+<h1 id="change-log"><a class="header" href="#change-log">Change Log</a></h1>
+<table><thead><tr><th align="left">Date</th><th align="left">Change</th><th align="left">Author</th></tr></thead><tbody>
+<tr><td align="left">18 Dec 2018</td><td align="left">First outline</td><td align="left">CjS77</td></tr>
+<tr><td align="left">30 Mar 2019</td><td align="left">First draft v0.0.1</td><td align="left">CjS77</td></tr>
+<tr><td align="left">19 Jun 2019</td><td align="left">Propose payment channel layer</td><td align="left">CjS77</td></tr>
+<tr><td align="left">22 Jun 2021</td><td align="left">Remove payment channel layer proposal</td><td align="left">SimianZa</td></tr>
+<tr><td align="left">14 Jan 2022</td><td align="left">Update image. Expound on Base layer responsibilities</td><td align="left">CjS77</td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="about.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="RFC-0100_BaseLayer.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="about.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="RFC-0100_BaseLayer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Initialize mermaid -->
+        <script src="theme/js/mermaid.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="mermaid.min.js"></script>
+        
+        <script type="text/javascript" src="mermaid-init.js"></script>
+        
+
+        
+
+    </body>
+</html>
